@@ -14,6 +14,17 @@ public class Person extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        String facing = "";
+        //Allows user to move around using arrow keys.
+         if (Greenfoot.isKeyDown("left"))
+        {
+            move(-10);
+            facing = "left";
+        }
+        if (Greenfoot.isKeyDown("right"))
+        {
+            move(10);
+            facing = "right";
+        }
     }
 }
