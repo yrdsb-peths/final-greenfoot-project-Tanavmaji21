@@ -18,13 +18,26 @@ public class Person extends Actor
         //Allows user to move around using arrow keys.
          if (Greenfoot.isKeyDown("left"))
         {
-            move(-3);
+            move(-5);
             facing = "left";
         }
         if (Greenfoot.isKeyDown("right"))
         {
-            move(3);
+            move(5);
             facing = "right";
+        }
+        
+        eat();
+    }
+    
+    
+    public void eat()
+    {
+        if(isTouching(Orange.class))
+        {
+            removeTouching(Orange.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createOrange();
         }
     }
 }
