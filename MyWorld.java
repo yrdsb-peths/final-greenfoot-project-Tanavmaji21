@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    int level = 1;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,6 +21,23 @@ public class MyWorld extends World
         // Creating a person in the world
         Person tanav = new Person();
         addObject(tanav,300,200);
+        
+        createOrange();
     }
 
+     public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 200);
+        addObject(gameOverLabel, 300, 200);
+    }
+    
+     public void createOrange()
+    {
+       Orange orange = new Orange();
+       orange.setSpeed(level);
+       int x = Greenfoot.getRandomNumber(600);
+       int y = 0;
+       addObject(orange, x, y);
+    }
+    
 }
