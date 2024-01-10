@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    public int score = 0;
+    Label scoreLabel;
     int level = 1;
     /**
      * Constructor for objects of class MyWorld.
@@ -23,6 +25,9 @@ public class MyWorld extends World
         addObject(tanav,300,200);
         
         createOrange();
+        scoreLabel = new Label(0,70);
+        addObject(scoreLabel, 550,30);
+
     }
 
      public void gameOver()
@@ -38,6 +43,17 @@ public class MyWorld extends World
        int x = Greenfoot.getRandomNumber(600);
        int y = 0;
        addObject(orange, x, y);
+    }
+    
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
+        
+        if(score % 5 == 0)
+        {
+            level += 1;
+        }
     }
     
 }

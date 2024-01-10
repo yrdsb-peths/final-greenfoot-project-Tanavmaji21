@@ -38,6 +38,7 @@ public class Person extends Actor
             removeTouching(Orange.class);
             MyWorld world = (MyWorld) getWorld();
             world.createOrange();
+            world.increaseScore();
         }
     }
 }
