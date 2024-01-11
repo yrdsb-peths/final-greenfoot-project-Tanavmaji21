@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Man extends Actor
 {
-    int speed = 1;
+    int speed = 4;
     /**
      * Act - do whatever the Man wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,6 +16,7 @@ public class Man extends Actor
     public void act()
     {
        movingAround();
+       touchVillain();
     }
     
     public void movingAround()
@@ -23,7 +24,7 @@ public class Man extends Actor
         move(speed);
         if(Greenfoot.isKeyDown("space"))
         {
-            speed = speed + 1;
+            move(4);
         }
         if(Greenfoot.isKeyDown("right"))
         {
@@ -38,4 +39,17 @@ public class Man extends Actor
             speed = speed - 1;
         }
     }
+    
+    public void touchVillain()
+    {
+        if(isTouching(Villain.class))
+        {
+            Greenfoot.stop();
+        }
+        if(isTouching(MainVillain.class))
+        {
+           Greenfoot.stop(); 
+        }
+    }
 }
+
