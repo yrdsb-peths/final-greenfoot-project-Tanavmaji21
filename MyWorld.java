@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    SimpleTimer time = new SimpleTimer();
+    Counter timeCount = new Counter();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -15,10 +17,17 @@ public class MyWorld extends World
     public MyWorld()
     {    
         super(800, 600, 1);
+        addObject(timeCount, 735, 30);
+        time.mark();
         getBackground().setColor(new Color(150,200,206));
         getBackground().fill();
 
         prepare();
+        
+    }
+    public void act()
+    {
+        timeCount.setValue(time.millisElapsed() /1000);
     }
 
     

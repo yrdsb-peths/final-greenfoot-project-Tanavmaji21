@@ -46,7 +46,7 @@ public class TitleScreen extends World
         addObject(label3,286,317);
         label3.setLocation(317,301);
         Label label4 = new Label("Use v to slow down boost speed", 25);
-        addObject(label,290,300);
+        addObject(label4,290,300);
         label4.setLocation(400,400);
 
         label.setLocation(402,291);
