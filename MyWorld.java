@@ -11,7 +11,7 @@ public class MyWorld extends World
     SimpleTimer time = new SimpleTimer();
     Counter timeCount = new Counter();
     public int score = 0;
-    Label scoreLabel = new Label(100,300);
+    Label scoreLabel;
     int level = 1;
     String prefix = "You played for (seconds): ";
     /**
@@ -25,6 +25,7 @@ public class MyWorld extends World
         time.mark();
         getBackground().setColor(new Color(150,200,206));
         getBackground().fill();
+        scoreLabel = new Label(0,75);
         createApple();
         prepare();
         
