@@ -58,8 +58,10 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 100);
-        addObject(gameOverLabel, 300, 200);
+        addObject(gameOverLabel, 400, 250);
+        
     }
+    
     
     /**
      * Prepare the world for the start of the program.

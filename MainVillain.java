@@ -24,4 +24,5 @@ public class MainVillain extends Actor
             setLocation(0, getY());
         }
     }
+    
 }
