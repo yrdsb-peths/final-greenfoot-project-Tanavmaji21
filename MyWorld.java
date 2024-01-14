@@ -13,6 +13,7 @@ public class MyWorld extends World
     public int score = 0;
     Label scoreLabel;
     int level = 1;
+    String prefix = "You played for (seconds): ";
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,19 +21,20 @@ public class MyWorld extends World
     public MyWorld()
     {    
         super(800, 600, 1);
-        addObject(timeCount, 735, 30);
+        addObject(timeCount, 650, 30);
         time.mark();
         getBackground().setColor(new Color(150,200,206));
         getBackground().fill();
         createApple();
         prepare();
-        scoreLabel = new Label(0,75);
+        scoreLabel = new Label(0,35);
         addObject(scoreLabel, 750,80);
         
     }
     public void act()
     {
         timeCount.setValue(time.millisElapsed() /1000);
+        timeCount.setPrefix(prefix);
     }
     
     public void increaseScore()
@@ -57,11 +59,17 @@ public class MyWorld extends World
     
     public void gameOver()
     {
-        Label gameOverLabel = new Label("Game Over", 100);
+        Label gameOverLabel = new Label("Game Over", 80);
         addObject(gameOverLabel, 400, 250);
+        Label scoreLabelText = new Label("You collected", 35);
+        addObject(scoreLabelText, 325, 355);
+        scoreLabel.setLocation(435, 355);
+        Label appleScoreLabel = new Label(" apples", 35);
+        addObject(appleScoreLabel, 495, 355);
+    
+        
         
     }
-    
     
     /**
      * Prepare the world for the start of the program.
