@@ -25,7 +25,8 @@ public class MyWorld extends World
         time.mark();
         getBackground().setColor(new Color(150,200,206));
         getBackground().fill();
-        scoreLabel = new Label(0,75);
+        scoreLabel = new Label(0,35);
+        addObject(scoreLabel, 750,80);
         createApple();
         prepare();
         
