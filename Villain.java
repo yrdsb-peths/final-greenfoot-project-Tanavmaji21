@@ -18,7 +18,7 @@ public class Villain extends Actor
     }
     public void movingAround()
     {
-        move(3);
+        move(2);
         if(getX() >= 799)
         {
             setLocation(0, getY());
