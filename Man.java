@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Man extends Actor
 {
-    GreenfootSound villainSound = new GreenfootSound("bear.mp3");
-    GreenfootSound appleSound = new GreenfootSound("apple.mp3");
+    GreenfootSound villainSound = new GreenfootSound("bear1.mp3");
+    GreenfootSound appleSound = new GreenfootSound("apple1.mp3");
     int speed = 4;
     /**
      * Act - do whatever the Man wants to do. This method is called whenever
@@ -47,11 +47,15 @@ public class Man extends Actor
     {
         if(isTouching(Villain.class))
         {
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
             villainSound.play();
             Greenfoot.stop();
         }
         if(isTouching(MainVillain.class))
         {
+           MyWorld world = (MyWorld) getWorld();
+           world.gameOver();
            villainSound.play();
            Greenfoot.stop(); 
         }
