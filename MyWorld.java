@@ -55,6 +55,12 @@ public class MyWorld extends World
        addObject(apple, x, y);
     }
     
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label("Game Over", 100);
+        addObject(gameOverLabel, 300, 200);
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -76,7 +82,6 @@ public class MyWorld extends World
         addObject(bear5, 80, 532);
         Villain bear6 = new Villain();
         addObject(bear6, 110, 562);
-
         MainVillain polarBear = new MainVillain();
         addObject(polarBear,55,302);
     }
