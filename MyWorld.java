@@ -10,6 +10,9 @@ public class MyWorld extends World
 {
     SimpleTimer time = new SimpleTimer();
     Counter timeCount = new Counter();
+    public int score = 0;
+    Label scoreLabel;
+    int level = 1;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -21,15 +24,36 @@ public class MyWorld extends World
         time.mark();
         getBackground().setColor(new Color(150,200,206));
         getBackground().fill();
-
+        createApple();
         prepare();
+        scoreLabel = new Label(0,75);
+        addObject(scoreLabel, 750,80);
         
     }
     public void act()
     {
         timeCount.setValue(time.millisElapsed() /1000);
     }
+    
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
+        
+        if(score % 5 == 0)
+        {
+            level += 1;
+        }
+    }
 
+    public void createApple()
+    {
+       Apple apple = new Apple();
+       apple.setSpeed(level);
+       int x = Greenfoot.getRandomNumber(600);
+       int y = 0;
+       addObject(apple, x, y);
+    }
     
     /**
      * Prepare the world for the start of the program.

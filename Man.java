@@ -17,6 +17,7 @@ public class Man extends Actor
     {
        movingAround();
        touchVillain();
+       eat();
     }
     
     public void movingAround()
@@ -50,6 +51,17 @@ public class Man extends Actor
         {
            Greenfoot.stop(); 
         }
+    }
+    
+    public void eat()
+    {
+      if(isTouching(Apple.class))
+        {
+            removeTouching(Apple.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.createApple();
+            world.increaseScore();
+        }  
     }
 }
 
