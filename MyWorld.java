@@ -11,7 +11,7 @@ public class MyWorld extends World
     SimpleTimer time = new SimpleTimer();
     Counter timeCount = new Counter();
     public int score = 0;
-    Label scoreLabel;
+    Label scoreLabel = new Label(100,300);
     int level = 1;
     String prefix = "You played for (seconds): ";
     /**
@@ -27,8 +27,6 @@ public class MyWorld extends World
         getBackground().fill();
         createApple();
         prepare();
-        scoreLabel = new Label(0,35);
-        addObject(scoreLabel, 750,80);
         
     }
     public void act()
@@ -66,9 +64,6 @@ public class MyWorld extends World
         scoreLabel.setLocation(435, 355);
         Label appleScoreLabel = new Label(" apples", 35);
         addObject(appleScoreLabel, 495, 355);
-    
-        
-        
     }
     
     /**
