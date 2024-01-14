@@ -25,10 +25,10 @@ public class MyWorld extends World
         time.mark();
         getBackground().setColor(new Color(150,200,206));
         getBackground().fill();
-        createApple();
-        prepare();
         scoreLabel = new Label(0,35);
         addObject(scoreLabel, 750,80);
+        createApple();
+        prepare();
         
     }
     public void act()
@@ -66,9 +66,6 @@ public class MyWorld extends World
         scoreLabel.setLocation(435, 355);
         Label appleScoreLabel = new Label(" apples", 35);
         addObject(appleScoreLabel, 495, 355);
-    
-        
-        
     }
     
     /**
