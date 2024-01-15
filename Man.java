@@ -1,19 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Man here.
+ * This is who the user controls, they control all the movement, 
+ * gather apples with it, dodge the animals, the goal is to keep 
+ * this character alive as long as possible, while grabbing the 
+ * apples every chance available.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tanav Majithia 
+ * @version January 14 2024
  */
 public class Man extends Actor
 {
+    /**
+     * Added sound, this sound occurs when the bear interacts
+     * with this character, and when an apple is eaten.
+     */
     GreenfootSound villainSound = new GreenfootSound("bear1.mp3");
     GreenfootSound appleSound = new GreenfootSound("apple1.mp3");
     int speed = 4;
     /**
-     * Act - do whatever the Man wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * The act method has been used to put different methods, 
+     * instead of fitting all the code in directly.
      */
     public void act()
     {
@@ -22,6 +29,11 @@ public class Man extends Actor
        eat();
     }
     
+    /**
+     * This allows the character to move around with the users control.
+     * Space is to boost, v is to slow down boost, and left and right 
+     * arrow keys are to move.
+     */
     public void movingAround()
     {
         move(speed);
@@ -43,6 +55,12 @@ public class Man extends Actor
         }
     }
     
+    
+    /**
+     * This is to end the game, essentially whenever this character comes
+     * into contact with any of the villains, the game should end and 
+     * bear noise shoud play.
+     */
     public void touchVillain()
     {
         if(isTouching(Villain.class))
@@ -61,6 +79,11 @@ public class Man extends Actor
         }
     }
     
+    /**
+     * This method was created to add points to the characters system
+     * everytime he gains an apple. It also enables the code to play a noise
+     * similiar to the noise of an apple being eaten. 
+     */
     public void eat()
     {
       if(isTouching(Apple.class))

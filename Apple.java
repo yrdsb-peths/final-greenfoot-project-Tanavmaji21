@@ -1,17 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Apple here.
+ * This is the main objective of the user, an attempt
+ * to get the most apples possible while avoiding the animals.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tanav 
+ * @version January 14 2024
  */
 public class Apple extends Actor
 {
     int speed = 1;
     /**
-     * Act - do whatever the Apple wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Gave the apple a location to be set when it exceeds the map
+     * to dissapear, and respawn at the top every single time 
+     * until the game is done/stopped.
      */
     public void act()
     {
@@ -28,6 +30,10 @@ public class Apple extends Actor
        
     }
     
+    /**
+     * This method was created to increase the speed of 
+     * the apples spawning everytime by 1.
+     */
     public void setSpeed(int spd)
     {
         speed = spd;
