@@ -1,21 +1,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MainVillain here.
+ * This is the main villain, who constantly runs down the middle, 
+ * creating a distraction and making it harder for the user
+ * to track down it's objective of collecting apples. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tanav Majithia
+ * @version January 14 2024
  */
 public class MainVillain extends Actor
 {
     /**
-     * Act - do whatever the MainVillain wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * The act method is simply being used as a place to put a method.
      */
     public void act()
     {
         movingAround();
     }
+    
+    /**
+     * This method is how the bear is able to move every time, as well as
+     * reset to the start everytime it's about to reach the end 
+     * of the screen.
+     */
     public void movingAround()
     {
         move(3);

@@ -1,13 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * This game is called the Animal Race
+ * The objective of this game is to avoid as many
+ * animals as you can, while collecting all the apples
+ * you can get before running into an animal.
+ * As the game goes on, the speed of the apples increase 
+ * making them harder to catch!
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tanav Majithia 
+ * @version January 14 2024
  */
 public class MyWorld extends World
 {
+    /**
+     * Some initilization done here to give certain variables and objects 
+     * a value or a starting point.
+     */
     SimpleTimer time = new SimpleTimer();
     Counter timeCount = new Counter();
     public int score = 0;
@@ -15,7 +24,8 @@ public class MyWorld extends World
     int level = 1;
     String prefix = "You played for (seconds): ";
     /**
-     * Constructor for objects of class MyWorld.
+     * This is the constructor of the class, where most objects are added onto the world
+     * or where certain methods are called here to be completed immediately.
      * 
      */
     public MyWorld()
@@ -31,12 +41,23 @@ public class MyWorld extends World
         prepare();
         
     }
+    
+    /**
+     * This act method has a purpose of helping the timer of the game go up in increments of 1
+     * playing the role of seconds in any game.
+     */
     public void act()
     {
         timeCount.setValue(time.millisElapsed() /1000);
         timeCount.setPrefix(prefix);
     }
     
+    /**
+     * This method is used to increase the score everytime
+     * the character of the game interacts with an apple
+     * Everytime that happens, one point is added to the score
+     * indicating that the user has collected 1 apple. 
+     */
     public void increaseScore()
     {
         score++;
@@ -48,6 +69,12 @@ public class MyWorld extends World
         }
     }
 
+    
+    /**
+     * This is where the apple (object) is created and later
+     * put into the world at a random point on the x and y 
+     * axis.
+     */
     public void createApple()
     {
        Apple apple = new Apple();
@@ -57,6 +84,13 @@ public class MyWorld extends World
        addObject(apple, x, y);
     }
     
+    /**
+     * The game over method has been installed to demonstrate labels
+     * that pop up for the user to know that the game is over
+     * and that they interacted with one of the animals.
+     * It also addresses how long they played that round for, as well 
+     * as mentioning how many apples they collected.
+     */
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over", 80);

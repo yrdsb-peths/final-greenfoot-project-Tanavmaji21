@@ -1,17 +1,24 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * The title screen is created to give a more 
+ * friendly and interactive approach for the user.
+ * With simple instructions, the user should be able to 
+ * understand how to start the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tanav Majithia
+ * @version January 14 2024
  */
 public class TitleScreen extends World
 {
+    /**
+     * The head title of the game 
+     */
     Label titleLabel = new Label("The Animal Race", 60);
     /**
      * Constructor for objects of class TitleScreen.
-     * 
+     * Added objects and called another method that consists 
+     * of many different labels. 
      */
     public TitleScreen()
     {    
@@ -20,7 +27,11 @@ public class TitleScreen extends World
         addObject(titleLabel, getWidth()/2, 200);
         prepare();
     }
-
+    
+    /**
+     * The act method indicating that after the space
+     * bar is clicked, the game will start right away.
+     */
     public void act()
     {
         if(Greenfoot.isKeyDown("space"))

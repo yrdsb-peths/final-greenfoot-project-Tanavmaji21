@@ -1,21 +1,26 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Villain here.
+ * This is the villain that comes from the bottom and the top, creating 
+ * a distraction for the character to get the apples and survive.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Tanav Majithia
+ * @version January 14 2024
  */
 public class Villain extends Actor
 {
     /**
-     * Act - do whatever the Villain wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * The act method being used to call other methods.
      */
     public void act()
     {
         movingAround();
     }
+    
+    /**
+     * Allows the villain to move around throughout the screen, without 
+     * crashing out at the ends of it.
+     */
     public void movingAround()
     {
         move(2);
