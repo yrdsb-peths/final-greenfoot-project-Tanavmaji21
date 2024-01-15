@@ -53,12 +53,15 @@ public class TitleScreen extends World
         Label label2 = new Label("Use space bar to boost", 25);
         addObject(label2, 285,270);
         label.setLocation(315, 264);
-        Label label3 = new Label("Click space bar to start!", 75);
+        Label label3 = new Label("Click space bar to start!", 55);
         addObject(label3,286,317);
         label3.setLocation(317,301);
         Label label4 = new Label("Use v to slow down boost speed", 25);
         addObject(label4,290,300);
-        label4.setLocation(400,400);
+        label4.setLocation(375,400);
+        Label label5 = new Label("Avoid the animals, collect apples!", 35);
+        addObject(label5, 288, 250);
+        label5.setLocation(400, 460);
 
         label.setLocation(402,291);
         label3.setLocation(410,553);
