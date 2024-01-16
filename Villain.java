@@ -10,11 +10,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Villain extends Actor
 {
     /**
+     * Array added here to make the bear move slightly with a tiny animation
+     */
+    private int[] path;
+    private int pathIndex;
+    
+    public Villain()
+    {
+        super();
+        pathIndex = 0;
+        path = new int[] {0,1,3,5,3};
+    }
+    /**
      * The act method being used to call other methods.
      */
     public void act()
     {
         movingAround();
+        setRotation(path[pathIndex % path.length]);
+        pathIndex++;
+        super.act();
     }
     
     /**

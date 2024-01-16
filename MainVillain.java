@@ -11,11 +11,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MainVillain extends Actor
 {
     /**
+     * Array added here to make the bear move slightly with a tiny animation
+     */
+    private int[] turns;
+    private int[] moves;
+    private int index;
+    
+    public MainVillain()
+    {
+        turns = new int[4];
+        moves = new int[4];
+        
+        turns[0] = 3;
+        turns[1] = 3;
+        turns[2] = -3;
+        turns[3] = -3;
+        moves[0] = 2;
+        moves[1] = 2;
+        moves[2] = 2;
+        moves[3] = 2;
+        
+        index = 0;
+    }
+    /**
      * The act method is simply being used as a place to put a method.
      */
     public void act()
     {
         movingAround();
+        turn(turns[index % turns.length]);
+        move(moves[index % moves.length]);
+        index++;
+        
     }
     
     /**
